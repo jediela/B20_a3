@@ -1,1 +1,1 @@
-As {OBJECT/ACTOR} I want to {ACTION} so that {RESULT}
+As user I want to have easy access to a header where all the important links are so that I can find and view what I need easily.

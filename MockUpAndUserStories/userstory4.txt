@@ -1,1 +1,1 @@
-As {OBJECT/ACTOR} I want to {ACTION} so that {RESULT}
+As user I want to click on the assignment button so that I can view the all the assignments for the class
