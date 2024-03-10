@@ -1,1 +1,0 @@
-As {OBJECT/ACTOR} I want to {ACTION} so that {RESULT}

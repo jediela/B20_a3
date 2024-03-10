@@ -1,1 +1,0 @@
-As a student, the student must be able to see the syllabus when clicking on 'syllabus' button/link 
