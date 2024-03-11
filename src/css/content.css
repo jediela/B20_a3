@@ -79,6 +79,7 @@ footer{
     margin-right: 100px;
     padding-left: 110px;
     padding-right: 110px;
+    align-content: center;
 }
 
 .title{
@@ -88,8 +89,9 @@ footer{
 
 .content{
     padding: 30px;
-    align-content: center;
+
 }
+
 table, th, td{
     text-align: center;
     font-size:20px;
