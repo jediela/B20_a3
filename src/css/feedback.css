@@ -76,10 +76,30 @@ footer{
     margin: 0 auto;
     margin-left: 100px;
     margin-right: 100px;
-
+    padding-left: 110px;
+    padding-right: 110px;
 }
 
 .title{
     text-align: center;
     font-size: 2rem;
+}
+
+.formGroup{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: grid;
+    grid-template-columns: 300px 300px;
+    grid-template-rows: 100px 100px;
+    background-color: red;
+}
+
+.nameInput{
+    grid-column-start: 1;
+    grid-column-end: 1;
+}
+
+.emailInput{
+    grid-column-start: 2;
+    grid-column-end: 2;
 }
