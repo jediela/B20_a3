@@ -85,8 +85,9 @@ footer{
     font-size: 2rem;
 }
 
-table{
-    width: 90%;
+.content{
+    padding: 30px;
+    align-content: center;
 }
 table, th, td{
     text-align: center;
@@ -95,8 +96,7 @@ table, th, td{
 }
 
 table{
-    margin-left: auto;
-    margin-right: auto;
+    width: 95%;
     margin-bottom: 50px;
     padding: 20px;
     border-collapse: collapse;
@@ -123,9 +123,7 @@ td{
     padding: 10px;
 }
 
+
 #note{
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
     font-size: 20px;
 }
