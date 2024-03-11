@@ -84,3 +84,31 @@ footer{
     text-align: center;
     font-size: 2rem;
 }
+table, th, td{
+    text-align: center;
+    font-size:20px;
+    border: 1px solid;
+    padding: 10px;
+}
+
+table{
+    width: 90%;
+    margin-bottom: 50px;
+    padding: 20px;
+    border-collapse: collapse;
+}
+th{
+    background-color: #023E8A;
+    color: white;
+    font-size: 25px;
+    padding: 10px; 
+    border-color: black;
+}
+
+tr:nth-child(even) {
+    background-color: #9abae4;
+}
+
+tr:nth-child(odd) {
+    background-color: #c0d5ef;
+}

@@ -111,3 +111,7 @@ td, th {
     text-align: center;
     padding: 20px;
 }
+
+.outline table{
+    border: 1px solid;
+}
