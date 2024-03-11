@@ -1,42 +1,63 @@
-
-body {
+body{
+    font-family: 'Inter', sans-serif;
+    background-color: rgb(202, 200, 200);
     margin: 0;
 }
 
-.title{
-    text-align: center;
-}
-
-/* Basic styling for the header */
 header {
+    background-color: rgb(202, 200, 200); 
+    width: 100%;
     display: flex;
     justify-content: center;
-
-
-
-    color: #fff;
     padding: 20px;
+    margin: 0;
     text-align: center;
-    width: 100%;
-    position: sticky;
-    top: 0;
-    z-index: 1000; /* Ensure the header is on top of other elements */
-    transition: background-color 0.3s ease; /* Add smooth transition effect for background color */
+    box-sizing: border-box;
+    flex-wrap: wrap;
 }
 
-.header h6{
-    width: 125px;
-    height: 30px;
-    font-size: larger;
-    margin: 5; /* Remove default margin to avoid extra spacing */
+
+.header{
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    width: 90%; 
+    margin: 0 auto;
+    border-bottom: 2px solid #023E8A;
+    display: flex;
+    
+    align-items: center;
+    justify-content: center;
+}
+
+.header h6 {
+    width: 8.5rem;
+    height: 35px;
+    font-size: 1.2rem;
+    margin: .8rem;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
+.header h6:hover {
+    background-color: #91e2f3;
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+.header h6 a {
+    color: #023E8A;
+    text-decoration: none;
+}
+
 .header h6.current_page {
-    background-color: #90E0EF; 
+    background-color: #bef1fb;
     font-weight: bold;
+}
+
+.header h6.current_page a {
+    color: #0077B6;
 }
 
 footer{
@@ -49,4 +70,16 @@ footer{
     padding-right: 50px;
     padding-top: 25px;
     padding-bottom: 25px;
+}
+
+.page-border{
+    margin: 0 auto;
+    margin-left: 100px;
+    margin-right: 100px;
+
+}
+
+.title{
+    text-align: center;
+    font-size: 2rem;
 }

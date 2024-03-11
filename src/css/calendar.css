@@ -63,12 +63,25 @@ header {
 footer{
     background-color: black;
     width: 100vw;
+
     height: 100px;
     color: aliceblue;
     padding-left: 50px;
     padding-right: 50px;
     padding-top: 25px;
     padding-bottom: 25px;
+}
+
+.page-border{
+    margin: 0 auto;
+    margin-left: 100px;
+    margin-right: 100px;
+
+}
+
+.title{
+    text-align: center;
+    font-size: 2rem;
 }
 
 .calendar{
