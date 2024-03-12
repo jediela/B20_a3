@@ -7,7 +7,7 @@ body{
 }
 
 header {
-    background-color: navy; 
+    background-color: skyblue; 
     width: 100%;
     display: flex;
     justify-content: center;
@@ -23,9 +23,7 @@ header {
     position: -webkit-sticky; /* Safari */
     position: sticky;
     top: 0;
-    width: 90%; 
     margin: 0 auto;
-    border-bottom: 2px solid powderblue;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -39,22 +37,21 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: blue;
 }
 
 .header h6:hover {
-    background-color: skyblue;
+    background-color: powderblue;
     transform: scale(1.1);
     transition: transform 0.3s ease;
 }
 
 .header h6 a {
-    color: white;
+    color: navy;
     text-decoration: none;
 }
 
 .header h6.current_page {
-    background-color: skyblue;
     font-weight: bold;
 }
 
@@ -105,7 +102,7 @@ a:link {
 .title{
     text-align: center;
     font-size: 2rem;
-    color: blue;
+    color: skyblue;
 }
 
 .subhead{
@@ -123,7 +120,7 @@ table{
     margin-bottom: 50px;
     padding: 20px;
     border-collapse: collapse;
-    background-color: powderblue;
+    background-color: skyblue;
 }
 
 th{

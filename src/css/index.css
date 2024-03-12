@@ -1,13 +1,13 @@
 body{
     font-family: 'Didact Gothic', sans-serif;
     font-size: 20px;
-    background-color: midnightblue;
+    background-color: navy;
     margin: 0;
     color: white;
 }
 
 header {
-    background-color: midnightblue; 
+    background-color: skyblue; 
     width: 100%;
     display: flex;
     justify-content: center;
@@ -23,9 +23,7 @@ header {
     position: -webkit-sticky; /* Safari */
     position: sticky;
     top: 0;
-    width: 90%; 
     margin: 0 auto;
-    border-bottom: 2px solid turquoise;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -39,43 +37,26 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: blue;
 }
 
 .header h6:hover {
-    background-color: turquoise;
+    background-color: powderblue;
     transform: scale(1.1);
     transition: transform 0.3s ease;
 }
 
 .header h6 a {
-    color: coral;
+    color: navy;
     text-decoration: none;
 }
 
 .header h6.current_page {
-    background-color: turquoise;
     font-weight: bold;
 }
 
 .header h6.current_page a {
-    color: teal;
-}
-
-a:link {
-    color: violet;
-    background-color: transparent;
-    text-decoration: underline;
-}
-  
-a:visited {
     color: blue;
-    background-color: transparent;
-    text-decoration: underline;
-}
-
-.subhead{
-    color: turquoise;
 }
 
 footer{
@@ -98,19 +79,34 @@ footer{
     height: auto;
 }
 
+a:link {
+    color: violet;
+    background-color: transparent;
+    text-decoration: underline;
+  }
+  
+  a:visited {
+    color: blue;
+    background-color: transparent;
+    text-decoration: underline;
+  }
+
 .page-border{
     margin: 0 auto;
     margin-left: 100px;
     margin-right: 100px;
     padding-left: 110px;
     padding-right: 110px;
-    align-content: center;
 }
 
 .title{
     text-align: center;
     font-size: 2rem;
-    color: coral;
+    color: skyblue;
+}
+
+.subhead{
+    color: skyblue;
 }
 
 .prof_img{
