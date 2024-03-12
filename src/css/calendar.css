@@ -1,11 +1,13 @@
 body{
-    font-family: 'Inter', sans-serif;
-    background-color: rgb(202, 200, 200);
+    font-family: 'Didact Gothic', sans-serif;
+    font-size: 20px;
+    background-color: midnightblue;
     margin: 0;
+    color: white;
 }
 
 header {
-    background-color: rgb(202, 200, 200); 
+    background-color: midnightblue; 
     width: 100%;
     display: flex;
     justify-content: center;
@@ -23,9 +25,8 @@ header {
     top: 0;
     width: 90%; 
     margin: 0 auto;
-    border-bottom: 2px solid #023E8A;
+    border-bottom: 2px solid turquoise;
     display: flex;
-    
     align-items: center;
     justify-content: center;
 }
@@ -38,33 +39,33 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
+    color: white;
 }
 
 .header h6:hover {
-    background-color: #91e2f3;
+    background-color: turquoise;
     transform: scale(1.1);
     transition: transform 0.3s ease;
 }
 
 .header h6 a {
-    color: #023E8A;
+    color: coral;
     text-decoration: none;
 }
 
 .header h6.current_page {
-    background-color: #bef1fb;
+    background-color: turquoise;
     font-weight: bold;
 }
 
 .header h6.current_page a {
-    color: #0077B6;
+    color: teal;
 }
 
 footer{
     background-color: black;
-    width: 100vw;
 
-    height: 100px;
+    height: fit-content;
     color: aliceblue;
     padding-left: 50px;
     padding-right: 50px;
@@ -72,18 +73,43 @@ footer{
     padding-bottom: 25px;
 }
 
+.footerText{
+    padding-left: 32px;
+}
+
+.uoftlogo{
+    width: 8%;
+    height: auto;
+}
+
+a:link {
+    color: violet;
+    background-color: transparent;
+    text-decoration: underline;
+  }
+  
+  a:visited {
+    color: blue;
+    background-color: transparent;
+    text-decoration: underline;
+  }
+
 .page-border{
     margin: 0 auto;
     margin-left: 100px;
     margin-right: 100px;
     padding-left: 110px;
     padding-right: 110px;
-    align-content: center;
 }
 
 .title{
     text-align: center;
     font-size: 2rem;
+    color: coral;
+}
+
+.subhead{
+    color: turquoise;
 }
 
 .calendar{

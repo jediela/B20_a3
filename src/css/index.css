@@ -1,17 +1,17 @@
 body{
-    font-family: 'Inter', sans-serif;
-    background-color: rgb(202, 200, 200);
-    margin: 0px;
-    padding: 0px;
+    font-family: 'Didact Gothic', sans-serif;
+    font-size: 20px;
+    background-color: midnightblue;
+    margin: 0;
+    color: white;
 }
 
 header {
-    background-color: rgb(5, 18, 75); 
+    background-color: midnightblue; 
     width: 100%;
     display: flex;
     justify-content: center;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding: 20px;
     margin: 0;
     text-align: center;
     box-sizing: border-box;
@@ -19,12 +19,13 @@ header {
 }
 
 
-
 .header{
     position: -webkit-sticky; /* Safari */
     position: sticky;
     top: 0;
+    width: 90%; 
     margin: 0 auto;
+    border-bottom: 2px solid turquoise;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -38,26 +39,43 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
+    color: white;
 }
 
 .header h6:hover {
-    background-color: #91e2f3;
+    background-color: turquoise;
     transform: scale(1.1);
     transition: transform 0.3s ease;
 }
 
 .header h6 a {
-    color: #023E8A;
+    color: coral;
     text-decoration: none;
 }
 
 .header h6.current_page {
-    background-color: #bef1fb;
+    background-color: turquoise;
     font-weight: bold;
 }
 
 .header h6.current_page a {
-    color: #0077B6;
+    color: teal;
+}
+
+a:link {
+    color: violet;
+    background-color: transparent;
+    text-decoration: underline;
+}
+  
+a:visited {
+    color: blue;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+.subhead{
+    color: turquoise;
 }
 
 footer{
@@ -92,6 +110,7 @@ footer{
 .title{
     text-align: center;
     font-size: 2rem;
+    color: coral;
 }
 
 .prof_img{
@@ -102,11 +121,12 @@ footer{
 
 .instructor{
     margin: 0 auto;
-    padding-bottom: 50px;
+    
 }
 
 table, th, td {
     border: 2px solid;
+    margin-bottom: 50px;
 }
 
 td, th {

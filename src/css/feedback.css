@@ -62,14 +62,22 @@ header {
 
 footer{
     background-color: black;
-    width: 100vw;
 
-    height: 100px;
+    height: fit-content;
     color: aliceblue;
     padding-left: 50px;
     padding-right: 50px;
     padding-top: 25px;
     padding-bottom: 25px;
+}
+
+.footerText{
+    padding-left: 32px;
+}
+
+.uoftlogo{
+    width: 8%;
+    height: auto;
 }
 
 .page-border{
