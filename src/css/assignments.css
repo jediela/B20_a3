@@ -1,7 +1,7 @@
 body{
     font-family: 'Didact Gothic', sans-serif;
     font-size: 20px;
-    background-color: white;
+    background-color: lightblue;
     margin: 0;
     color: black;
 }
@@ -41,13 +41,13 @@ header {
 }
 
 .header h6:hover {
-    background-color: powderblue;
+    background-color: lightblue;
     transform: scale(1.1);
     transition: transform 0.3s ease;
 }
 
 .header h6 a {
-    color: white;
+    color: whitesmoke;
     text-decoration: none;
 }
 
@@ -108,7 +108,7 @@ table{
     margin-bottom: 50px;
     padding: 20px;
     border-collapse: collapse;
-    background-color: lightblue;
+    background-color: whitesmoke;
 }
 
 th{

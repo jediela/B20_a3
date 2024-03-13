@@ -1,13 +1,13 @@
 body{
     font-family: 'Didact Gothic', sans-serif;
     font-size: 20px;
-    background-color: navy;
+    background-color: lightblue;
     margin: 0;
-    color: white;
+    color: black;
 }
 
 header {
-    background-color: skyblue; 
+    background-color: navy; 
     width: 100%;
     display: flex;
     justify-content: center;
@@ -41,13 +41,13 @@ header {
 }
 
 .header h6:hover {
-    background-color: powderblue;
+    background-color: lightblue;
     transform: scale(1.1);
     transition: transform 0.3s ease;
 }
 
 .header h6 a {
-    color: navy;
+    color: whitesmoke;
     text-decoration: none;
 }
 
@@ -79,18 +79,6 @@ footer{
     height: auto;
 }
 
-a:link {
-    color: violet;
-    background-color: transparent;
-    text-decoration: underline;
-  }
-  
-  a:visited {
-    color: blue;
-    background-color: transparent;
-    text-decoration: underline;
-  }
-
 .page-border{
     margin: 0 auto;
     margin-left: 100px;
@@ -102,9 +90,9 @@ a:link {
 .title{
     text-align: center;
     font-size: 2rem;
-    color: skyblue;
+    color: navy;
 }
 
 .subhead{
-    color: skyblue;
+    color: navy;
 }
