@@ -101,3 +101,10 @@ footer{
 .subhead{
     color: navy;
 }
+
+.submit{
+    color: white;
+    background-color: navy;
+    border-radius: 10px;
+    size: 100vmax;
+}
