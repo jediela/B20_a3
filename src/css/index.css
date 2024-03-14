@@ -20,7 +20,6 @@ header {
 
 
 .header{
-    position: -webkit-sticky; /* Safari */
     position: sticky;
     top: 0;
     margin: 0 auto;
@@ -56,6 +55,11 @@ header {
 }
 
 .header h6.current_page a {
+    background-color: lightblue;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
     color: blue;
 }
 
