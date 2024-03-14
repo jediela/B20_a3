@@ -1,1 +1,1 @@
-As a student, the student must be able to see the syllabus when clicking on 'course information sheet' link on the home page 
+As a student, the student must be able to see the syllabus when clicking on 'syllabus' link on the home page 

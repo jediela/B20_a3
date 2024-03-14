@@ -101,31 +101,25 @@ footer{
     color: navy;
 }
 
-.links{
-    padding-bottom: 12px;
-}
-
-.prof_img{
-    width: 250px;
-    height: auto;
-    margin-top: 10px;
-}
-
-.instructor{
-    margin: 0 auto;
-    
-}
-
-table, th, td {
-    border: 2px solid;
-    margin-bottom: 50px;
-}
-
-td, th {
+table, th, td{
     text-align: center;
-    padding: 20px;
+    font-size:20px;
+    border: 1px solid;
+    padding: 10px;
+    color: black;
 }
 
-.outline table{
-    border: 1px solid;
+table{
+    margin-bottom: 50px;
+    padding: 20px;
+    border-collapse: collapse;
+    background-color: whitesmoke;
+}
+
+th{
+    background-color: navy;
+    color: white;
+    font-size: 25px;
+    padding: 10px; 
+    border-color: black;
 }

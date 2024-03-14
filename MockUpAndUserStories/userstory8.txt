@@ -1,1 +1,1 @@
-As student user I want to click on the home button/link so that I can view the course description, lecture times, office hours, instructor email and other important information on the course
+As student user I want to click on the home button/link so that I can view the course description, lecture times, office hours, instructor email and other important information on the course, as well as the syllabus and piazza links

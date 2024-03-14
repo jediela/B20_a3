@@ -101,3 +101,12 @@ footer{
 .subhead{
     color: navy;
 }
+
+.submit{
+    color: white;
+    background-color: navy;
+    border-radius: 10px;
+    font-size: 24px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
