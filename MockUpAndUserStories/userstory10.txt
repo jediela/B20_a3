@@ -1,1 +1,1 @@
-As {OBJECT/ACTOR} I want to {ACTION} so that {RESULT}
+As student user I want to click on the course team button/link so that I can view the TA's and instructor for this course and their office hours and tutorials.
