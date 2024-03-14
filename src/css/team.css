@@ -20,7 +20,6 @@ header {
 
 
 .header{
-    position: -webkit-sticky; /* Safari */
     position: sticky;
     top: 0;
     margin: 0 auto;
@@ -100,4 +99,33 @@ footer{
 
 .subhead{
     color: navy;
+}
+
+.links{
+    padding-bottom: 12px;
+}
+
+.prof_img{
+    width: 250px;
+    height: auto;
+    margin-top: 10px;
+}
+
+.instructor{
+    margin: 0 auto;
+    
+}
+
+table, th, td {
+    border: 2px solid;
+    margin-bottom: 50px;
+}
+
+td, th {
+    text-align: center;
+    padding: 20px;
+}
+
+.outline table{
+    border: 1px solid;
 }

@@ -56,8 +56,8 @@ header {
 
 .header h6.current_page a {
     background-color: lightblue;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding-top: 4px;
+    padding-bottom: 4px;
     padding-left: 15px;
     padding-right: 15px;
     color: blue;
@@ -99,6 +99,10 @@ footer{
 
 .subhead{
     color: navy;
+}
+
+.links{
+    padding-bottom: 12px;
 }
 
 .prof_img{
