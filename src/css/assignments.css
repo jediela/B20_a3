@@ -56,6 +56,11 @@ header {
 }
 
 .header h6.current_page a {
+    background-color: lightblue;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 8px;
+    padding-right: 8px;
     color: blue;
 }
 
