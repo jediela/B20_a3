@@ -106,5 +106,7 @@ footer{
     color: white;
     background-color: navy;
     border-radius: 10px;
-    size: 100vmax;
+    font-size: 24px;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
