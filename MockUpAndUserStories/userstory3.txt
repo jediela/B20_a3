@@ -1,1 +1,1 @@
-As student user I want to click on the calendar button so that I can view the course calendar so I am updated with class events
+As a student user I want to click on the calendar button so that I can view the course calendar so I am updated with class events
