@@ -102,11 +102,27 @@ footer{
     color: navy;
 }
 
+.input-small{
+    font-size: medium;
+    width: 20vw;
+    margin-top: 4px;
+    margin-bottom: 15px;
+}
+
+.input-large{
+    font-size: medium;
+    font-family: 'Didact Gothic', sans-serif;
+    width: 75vw;
+    margin-top: 4px;
+    margin-bottom: 15px;
+}
+
 .submit{
     color: white;
     background-color: navy;
     border-radius: 10px;
     font-size: 24px;
+    padding: 12px;
     margin-top: 15px;
-    margin-bottom: 15px;
+    margin-bottom: 90px;
 }
