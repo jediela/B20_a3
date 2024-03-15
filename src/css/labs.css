@@ -66,13 +66,13 @@ header {
 
 footer{
     background-color: black;
-
     height: fit-content;
     color: aliceblue;
     padding-left: 50px;
     padding-right: 50px;
     padding-top: 25px;
     padding-bottom: 25px;
+    margin-top: 50px;
 }
 
 .footerText{
@@ -140,4 +140,46 @@ td{
 
 #note{
     font-size: 20px;
+}
+
+.acc{
+    color: navy;
+    background-color: white;
+    border: 1px solid;
+    padding: 5px;
+    font-weight: bold;
+}
+
+.inside{
+    background-color: white;
+}
+
+.words{
+    font-size: 20px;
+    color: black;
+    font-weight: lighter;
+}
+
+.tests{
+    font-size: 20px;
+}
+
+.acc_title{
+    color: white;
+    background-color: navy;
+    border: 1px solid;
+    padding: 5px;
+    font-weight: bold;
+    display: block;
+}
+.inside_title{
+    background-color: navy;
+    width: 100%;
+    font-size: 20px;
+}
+
+.words_title{
+    color: white;
+    font-size: 20px;
+    font-weight: lighter;
 }

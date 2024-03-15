@@ -110,3 +110,12 @@ footer{
     margin-top: 15px;
     margin-bottom: 15px;
 }
+
+label{
+    color: navy;
+    font-weight: bold;
+}
+
+.formGroup{
+    border-radius: 10px;
+}
