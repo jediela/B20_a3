@@ -1,1 +1,1 @@
-As user I want to have easy access to a header where all the important links are so that I can find and view what I need easily.
+As a student user, I want to have easy access to a header where all the important links are so that I can find and view what I need easily.
