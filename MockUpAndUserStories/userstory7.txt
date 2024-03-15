@@ -1,1 +1,1 @@
-As student user I want to click on the feedback button/link so that I can give feedback to the instructors on the course
+As a student user, I want to click on the feedback button/link so that I can give feedback to the instructors on the course.
