@@ -66,8 +66,7 @@ header {
 
 footer{
     background-color: black;
-
-    height: fit-content;
+    height: 30.7vh;
     color: aliceblue;
     padding-left: 50px;
     padding-right: 50px;
@@ -102,20 +101,25 @@ footer{
     color: navy;
 }
 
+.input-large{
+    font-size: medium;
+    font-family: 'Didact Gothic', sans-serif;
+    width: 75vw;
+    margin-top: 4px;
+    margin-bottom: 15px;
+}
+
 .submit{
     color: white;
     background-color: navy;
     border-radius: 10px;
     font-size: 24px;
+    padding: 12px;
     margin-top: 15px;
-    margin-bottom: 15px;
+    margin-bottom: 90px;
 }
 
 label{
     color: navy;
     font-weight: bold;
-}
-
-.formGroup{
-    border-radius: 10px;
 }

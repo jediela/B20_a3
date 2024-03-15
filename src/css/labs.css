@@ -66,7 +66,7 @@ header {
 
 footer{
     background-color: black;
-    height: fit-content;
+    height: 29.63vh;
     color: aliceblue;
     padding-left: 50px;
     padding-right: 50px;
@@ -146,7 +146,7 @@ td{
     color: navy;
     background-color: white;
     border: 1px solid;
-    padding: 5px;
+    padding: 10px;
     font-weight: bold;
 }
 
@@ -168,7 +168,7 @@ td{
     color: white;
     background-color: navy;
     border: 1px solid;
-    padding: 5px;
+    padding: 10px;
     font-weight: bold;
     display: block;
 }

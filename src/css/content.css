@@ -66,8 +66,7 @@ header {
 
 footer{
     background-color: black;
-
-    height: fit-content;
+    height: 24.6vh;
     color: aliceblue;
     padding-left: 50px;
     padding-right: 50px;
@@ -109,7 +108,7 @@ table, th, td{
 }
 
 table{
-    width: 95%;
+    width: 100%;
     margin-bottom: 50px;
     padding: 20px;
     border-collapse: collapse;
