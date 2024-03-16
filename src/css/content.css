@@ -87,11 +87,8 @@ footer{
 }
 
 .page-border{
-    margin: 0 auto;
-    margin-left: 100px;
-    margin-right: 100px;
-    padding-left: 110px;
-    padding-right: 110px;
+    margin-left: 15vw;
+    margin-right: 15vw;
 }
 
 .title{
@@ -107,7 +104,6 @@ footer{
 table, th, td{
     text-align: center;
     font-size:20px;
-    
 }
 
 table{
@@ -142,4 +138,17 @@ td{
 
 #note{
     font-size: 20px;
+}
+
+/* Media query for screens smaller than 600px */
+@media (max-width: 600px) {
+    th{
+        background-color: red;
+        font-size: 15px;
+    }
+
+    table, th, td{
+        text-align: center;
+        font-size: 12px;
+    }
 }
