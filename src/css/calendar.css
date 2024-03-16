@@ -103,5 +103,7 @@ footer{
 .calendar{
     margin-top: 30px;
     margin-bottom: 50px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
