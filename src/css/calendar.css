@@ -64,14 +64,16 @@ header {
 }
 
 footer{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
     background-color: black;
-
     height: fit-content;
     color: aliceblue;
     padding-left: 50px;
     padding-right: 50px;
-    padding-top: 25px;
-    padding-bottom: 25px;
+    padding-top: 50px;
+    padding-bottom: 35px;
 }
 
 .footerText{
