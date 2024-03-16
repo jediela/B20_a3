@@ -104,7 +104,6 @@ footer{
 table, th, td{
     text-align: center;
     font-size:20px;
-    
 }
 
 table{
@@ -139,4 +138,17 @@ td{
 
 #note{
     font-size: 20px;
+}
+
+/* Media query for screens smaller than 600px */
+@media (max-width: 600px) {
+    th{
+        background-color: red;
+        font-size: 15px;
+    }
+
+    table, th, td{
+        text-align: center;
+        font-size: 12px;
+    }
 }
