@@ -112,6 +112,13 @@ table{
     padding: 20px;
     border-collapse: collapse;
     color: black;
+
+    
+}
+
+.content-table{
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 th{
@@ -140,7 +147,7 @@ td{
     font-size: 20px;
 }
 
-/* Media query for screens smaller than 600px */
+/* Media query for screens smaller than 600px
 @media (max-width: 600px) {
     th{
         background-color: red;
@@ -151,4 +158,4 @@ td{
         text-align: center;
         font-size: 12px;
     }
-}
+} */
