@@ -102,22 +102,23 @@ footer{
 }
 
 .prof_img{
-    width: 40%;
+    width: 20%;
     height: auto;
-    margin: 0.1vw;
+    margin: 0;
 }
 
 table, th, td{
     width: 100%;
     text-align: center;
-    font-size: 1.3vw;
+    font-size: 15px;
     border: 1px solid;
     padding: 10px;
     color: black;
 }
 
 table{
-    width: device-width;
+    width: 100%;
+    table-layout:initial;
     margin-bottom: 50px;
     padding: 20px;
     border-collapse: collapse;
@@ -127,12 +128,15 @@ table{
 th{
     background-color: navy;
     color: white;
-    padding: 1vw; 
+    padding: 10px; 
     border-color: black;
 }
 
 .course-table{
     margin-bottom: 50px;
+    width: 100%;
+    max-width: 100%;
     overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
