@@ -100,7 +100,7 @@ footer{
 }
 
 .prof_img{
-    width: 20%;
+    width: 40%;
     height: auto;
     margin: 0;
 }
@@ -108,7 +108,7 @@ footer{
 table, th, td{
     width: 100%;
     text-align: center;
-    font-size: 15px;
+    font-size: 20px;
     border: 1px solid;
     padding: 10px;
     color: black;
@@ -116,7 +116,7 @@ table, th, td{
 
 table{
     width: 100%;
-    table-layout:initial;
+    table-layout: fixed;
     margin-bottom: 50px;
     padding: 20px;
     border-collapse: collapse;
