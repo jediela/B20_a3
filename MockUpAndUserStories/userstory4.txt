@@ -1,1 +1,0 @@
-As a student user, I want to click on the assignment button so that I can view all the assignments for class.

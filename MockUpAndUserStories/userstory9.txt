@@ -1,1 +1,0 @@
-As a student user I want to click on the labs button/link so that I can view the labs for the week.
