@@ -124,7 +124,6 @@ def instructorHome():
     return render_template('instructorHome.html', uname=uname)
 
 @app.route('/studentHome')
-@app.route('/studentHome')
 def studentHome():
     if 'user_id' not in session or session['user_type'] != 'student':
         flash('You are not authorized to access this page.', 'error')
@@ -134,8 +133,13 @@ def studentHome():
 
 @app.route('/index.html')
 def home():
+    user_type = session.get('user_type')
+    if user_type == 'instructor':
+        return redirect(url_for('instructorHome'))
+    elif user_type == 'student':
+        return redirect(url_for('studentHome'))
+    else:
         return render_template("index.html")
-
 @app.route('/assignments.html')
 def assignments(): 
     return render_template("assignments.html")
