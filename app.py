@@ -45,39 +45,44 @@ class Feedback(db.Model):
     feedback = db.Column(db.Text, nullable=False)
 
 @app.route('/')
+def homepage():
+    return render_template('home.html')
+@app.route('/introduce')
+def introduce():
+    return render_template('introduce.html')
+
+@app.route('/developers')
+def developers():
+    return render_template('developers.html')
+
+
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
         username = request.form.get('username')
         password = request.form.get('password')
-
-        if not username or not password:
-            flash('Username and password are required.')
-            return render_template('login.html')
-
         user = User.query.filter_by(uname=username).first()
 
-        if not user:
-            flash('Invalid username or password')
+        if user is None:
+            flash('Username not found')
             return render_template('login.html')
 
-        if not check_password_hash(user.upwd, password):
-            flash('Invalid username or password')
+        elif not check_password_hash(user.upwd, password):
+            flash('invalid password')
             return render_template('login.html')
 
         session['user_id'] = user.id
         session['user_type'] = user.utype
-        flash('Login successful!')
+        # flash('Login successful!')
         user_type = session.get('user_type')
         if user_type == 'instructor':
-            flash('Welcome instructor')
+            # flash('Welcome instructor')
             return redirect(url_for('instructorHome'))
         elif user_type == 'student':
-            flash('Welcome student')
-
+            # flash('Welcome student')
             return redirect(url_for('studentHome'))
-
     return render_template('login.html')
+
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
@@ -117,6 +122,7 @@ def instructorHome():
     # if 'user_id' not in session or session['user_type'] != 'instructor':
     #     flash('You are not authorized to access this page.', 'error')
     #     return redirect(url_for('home'))
+    
     uname = User.query.filter_by(id=session['user_id']).first().uname
     return render_template('instructorHome.html', uname=uname)
 
@@ -164,4 +170,4 @@ def team():
 
 if __name__ == '__main__':
     db.create_all()
-    app.run(debug=True)
+    app.run(debug=True,port="5010")
