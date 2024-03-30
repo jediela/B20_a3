@@ -3,100 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../static/css/index.css">
     <title>Sign Up</title>
-    <style>
-        /* 추가한 CSS 스타일링 */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-        }
-
-        .container {
-            max-width: 600px;
-            margin: 100px auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        h2 {
-            margin-bottom: 20px;
-        }
-
-        label {
-            font-weight: bold;
-        }
-
-        input[type="text"],
-        input[type="password"],
-        input[type="email"],
-        select {
-            width: 100%;
-            padding: 10px;
-            margin: 5px 0 20px 0;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-
-        button[type="submit"] {
-            background-color: #4CAF50;
-            color: white;
-            padding: 14px 20px;
-            margin: 8px 0;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            width: 100%;
-        }
-
-        button[type="submit"]:hover {
-            background-color: #45a049;
-        }
-
-        p {
-            text-align: center;
-        }
-    </style>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-    <div class="container">
-        <h2>Sign Up</h2>
-        <form action="/register" method="POST">
-            <!-- 회원가입 폼 -->
-            <label for="newUsername">Username:</label><br>
-            <input type="text" id="newUsername" name="username" required><br>
-            <label for="email">Email:</label><br>
-            <input type="email" id="email" name="email" required><br>
-            <label for="newPassword">Password:</label><br>
-            <input type="password" id="newPassword" name="password" required><br>
-            <label for="newUserType">User Type:</label><br>
-            <select id="newUserType" name="user_type" required>
+
+<div class="container mt-5">
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-danger" role="alert">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    <h1>Sign Up</h1>
+    <div>
+        <a href="/" class="btn btn-primary mr-2">Home</a>
+        <a href="/introduce" class="btn btn-secondary mr-2">Introduce</a>
+        <a href="/developers" class="btn btn-info">Developers</a>
+    </div>
+    <hr>
+    <form action="/register" method="POST">
+        <div class="form-group">
+            <label for="newUsername">Username</label>
+            <input type="text" class="form-control" id="newUsername" name="username" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="newPassword">Password</label>
+            <input type="password" class="form-control" id="newPassword" name="password" required>
+        </div>
+        <div class="form-group">
+            <label for="newUserType">User Type</label>
+            <select class="form-control" id="newUserType" name="user_type" required>
                 <option value="instructor">Instructor</option>
                 <option value="student">Student</option>
-            </select><br>
-            <button type="submit">Sign Up</button>
-        </form>
-        <p>Already have an account? <a href="login" onclick="toggleForm()">Login</a></p>
-    </div>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Sign Up</button>
+    </form>
+    <p>Already have an account? <a href="/login">Login</a></p>
+</div>
 
-    <script>
-        function toggleForm() {
-            var loginForm = document.getElementById("loginForm");
-            var signupForm = document.getElementById("signupForm");
-
-            if (signupForm.style.display === "none") {
-                signupForm.style.display = "block";
-                loginForm.style.display = "none";
-            } else {
-                signupForm.style.display = "none";
-                loginForm.style.display = "block";
-            }
-        }
-    </script>
 </body>
 </html>

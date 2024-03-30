@@ -45,6 +45,7 @@ class Feedback(db.Model):
     feedback = db.Column(db.Text, nullable=False)
 
 @app.route('/')
+@app.route('/homepage')
 def homepage():
     return render_template('home.html')
 @app.route('/introduce')
@@ -116,7 +117,7 @@ def register():
 def logout():
     session.pop('user_id', None)
     session.pop('user_type', None)
-    return redirect(url_for('login'))
+    return redirect(url_for('homepage'))
 @app.route('/instructorHome')
 def instructorHome():
     # if 'user_id' not in session or session['user_type'] != 'instructor':
@@ -171,4 +172,4 @@ def team():
 if __name__ == '__main__':
     db.create_all()
     # app.run(debug=True,port="5010")
-    app.run(debug=True)
+    app.run(debug=True,port=5001)
