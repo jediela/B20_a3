@@ -10,14 +10,20 @@
 
 <div class="container mt-5">
     {% with messages = get_flashed_messages() %}
-        {% if messages %}
-            {% for message in messages %}
+    {% if messages %}
+        {% for message in messages %}
+            {% if 'Success' in message %}
+                <div class="alert alert-success" role="alert">
+                    {{ message }}
+                </div>
+            {% else %}
                 <div class="alert alert-danger" role="alert">
                     {{ message }}
                 </div>
-            {% endfor %}
-        {% endif %}
-    {% endwith %}
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+{% endwith %}
 
     <h1>Login</h1>
     <div>
