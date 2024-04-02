@@ -135,6 +135,12 @@ def studentHome():
     uname = User.query.filter_by(id=session['user_id']).first().uname
     return render_template('studentHome.html', uname=uname)
 
+
+@app.route('/studentGrades.html')
+def studentGrades():
+    if request.method == 'GET':
+        return render_template("studentGrades.html")
+    
 @app.route('/index.html')
 def home():
     user_type = session.get('user_type')

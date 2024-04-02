@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grades</title>
+</head>
+<body>
+    {% block content %}
+    <table>
+        <tr>
+            <th>Course</th>
+            <th>Grade</th>
+        </tr>
+        {% for Grade in query_grades %}
+        <tr>
+            {% if id %}
+            <td>{{ Grade.course }}</td>
+            <td>{{ Grade.mark }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endblock %}
+</body>
+</html>
