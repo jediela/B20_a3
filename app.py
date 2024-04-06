@@ -8,13 +8,15 @@ from datetime import datetime, timedelta
 from flask import Flask, render_template, url_for, flash, redirect, request, session
 from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
-from sqlalchemy import text # textual queries
-
+from sqlalchemy import text, create_engine # textual queries
 
 app = Flask(__name__)
 bcrypt = Bcrypt(app) # consider later.
 app.config['SECRET_KEY'] = 'secret_key'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///A3.db'
+
+journal_mode = 'DELETE'
+engine = create_engine('sqlite:///A3.db?journal_mode=' + journal_mode)
 db = SQLAlchemy(app)
 app.app_context().push()
 class User(db.Model):
@@ -39,7 +41,7 @@ class Remark(db.Model):
     id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
     work = db.Column(db.String(50), db.ForeignKey('grades.work'), nullable = False)
     question = db.Column(db.Integer)
-    request =db.Column(db.String(1000), db.ForeignKey('grades.work'), nullable = False)
+    request = db.Column(db.String(1000), nullable = False)
 
 class Feedback(db.Model):
     __tablename__ = 'feedback'
@@ -143,15 +145,14 @@ def studentHome():
 @app.route('/studentGrades.html', methods = ['GET', 'POST'])
 def studentGrades():
     student_grades = Grade.query.filter_by(id=session['user_id']).all()
+
     if request.method == 'POST':
         rmk_question = request.form['question']
         rmk_request = request.form['request']
-        grades = Grade.query.filter_by(work=session['work_type']).first()
 
-        session['work_type'] = grades.work
-        work_type = session.get('grade_work')
-
-        make_request = Remark(question = rmk_question, request = rmk_request, work = work_type)
+        work_type = Grade.query.filter_by(id=session['user_id']).first().work
+        
+        make_request = Remark(id = session['user_id'], work = work_type, question = rmk_question, request = rmk_request)
         db.session.add(make_request)
         db.session.commit()
         flash("Submitted successfully! You'll hear back from your professor soon!", 'success')

@@ -9,37 +9,23 @@
         <title>Grades</title>
     </head>
     <body>
+    {% block content %}
+        {% for Grade in student_grades %}
+            <div class = "overlay" id = "overlay{{ loop.index }}">
+                <div class = "modal" id = "modal {{ loop.index }}">
+                    <button class = "close-modal-btn">&times;</button>
+                    <form method="post">
+                        <h2 class = formTitle>Remark Request for {{ Grade.work }}</h2>
+                        <label for="question{{ loop.index }}">Question (if applicable):</label>
+                        <input type="number" id = "question{{ loop.index }}" name = "question"><br><br>
+                        <label for="request{{ loop.index }}">Reason for request:</label>
+                        <input class = "request-reason" type="text" id = "request{{ loop.index }}" name = "request" requiers> <br><br>
+                        <button type = "submit" class = "submit_btn">Submit</button>
+                    </form>
+                </div>  
+            </div>    
+         {% endfor %}
 
-        <!-- </div>
-        <button id = "openForm">Request Regrade</button>
-        <div class = "request_form" id = "request_form">
-            <div class = inner_form>
-                <form method="post">
-                    <h2>Remark Request</h2>
-                    <label for="question">Question (if applicable):</label>
-                    <input type="number" id = "question" name = "question">
-                    <label for="request">Reason for request:</label>
-                    <input type="text" id = "request" name = "request" requiers>
-                    <button id = ""></button>
-                </form>
-                <button id = "closeForm">&times;</button>
-            </div>
-         </div> -->
-
-        <div class ="overlay">
-            <div class ="modal">
-                <button class = "close-modal-btn">x</button>
-                <h2>Remark Request</h2>
-                <form action = "{{url_for('studentGrades')}}"method="POST">
-                    <label for="question">Question (if applicable):</label>
-                    <input type="number" id = "question" name = "question">
-                    <label for="request">Reason for request:</label>
-                    <input type="text" id = "request" name = "request" required>
-                    <button class = "submit_btn">Submit</button>
-                </form>
-
-            </div>
-        </div>
 
         <div class = "website_content">
 
@@ -54,8 +40,9 @@
                     <h6><a href="./feedback.html">Feedback</a></h6>
                 </header>
             </div>
+
+            <h1 class = "title">Your Grades</h1>
     
-            {% block content %}
             <div class = "grades_table">
                 <table>
                     <tr>
@@ -69,7 +56,7 @@
                         <td>{{ Grade.work }}</td>
                         <td>{{ Grade.grade }}</td>
                         <td>
-                            <button class = "show-modal-btn">Request Remark</button>
+                            <button type = "button" class = "open-modal-btn">Request Remark</button>
                         </td>        
                     </tr>
                     {% endfor %}
@@ -78,7 +65,7 @@
         </div>
 
     {% endblock %}
-    <script src = "script.js"></script>
+    <script src = "../static/script.js"></script>
     </body>
     </html>
     
