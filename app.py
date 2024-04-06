@@ -28,14 +28,18 @@ class User(db.Model):
 
 class Grade(db.Model):
     __tablename__ = 'grades'
-    id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    gid = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    work = db.Column(db.String(50), nullable = False)
+    grade = db.Column(db.Integer)
 
 class Remark(db.Model):
     __tablename__ = 'remark'
     rid = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    uid = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
-    aid = db.Column(db.Integer, nullable=False)
+    id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    work = db.Column(db.String(50), db.ForeignKey('grades.work'), nullable = False)
+    question = db.Column(db.Integer)
+    request =db.Column(db.String(1000), db.ForeignKey('grades.work'), nullable = False)
 
 class Feedback(db.Model):
     __tablename__ = 'feedback'
@@ -69,7 +73,7 @@ def login():
             return render_template('login.html')
 
         elif not check_password_hash(user.upwd, password):
-            flash('invalid password')
+            flash('Invalid password')
             return render_template('login.html')
 
         session['user_id'] = user.id
@@ -136,10 +140,23 @@ def studentHome():
     return render_template('studentHome.html', uname=uname)
 
 
-@app.route('/studentGrades.html')
+@app.route('/studentGrades.html', methods = ['GET', 'POST'])
 def studentGrades():
-    if request.method == 'GET':
-        return render_template("studentGrades.html")
+    student_grades = Grade.query.filter_by(id=session['user_id']).all()
+    if request.method == 'POST':
+        rmk_question = request.form['question']
+        rmk_request = request.form['request']
+        grades = Grade.query.filter_by(work=session['work_type']).first()
+
+        session['work_type'] = grades.work
+        work_type = session.get('grade_work')
+
+        make_request = Remark(question = rmk_question, request = rmk_request, work = work_type)
+        db.session.add(make_request)
+        db.session.commit()
+        flash("Submitted successfully! You'll hear back from your professor soon!", 'success')
+    return render_template("studentGrades.html", student_grades = student_grades)
+
     
 @app.route('/index.html')
 def home():

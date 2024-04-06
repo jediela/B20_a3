@@ -1,25 +1,84 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grades</title>
-</head>
-<body>
-    {% block content %}
-    <table>
-        <tr>
-            <th>Course</th>
-            <th>Grade</th>
-        </tr>
-        {% for Grade in query_grades %}
-        <tr>
-            {% if id %}
-            <td>{{ Grade.course }}</td>
-            <td>{{ Grade.mark }}</td>
-        </tr>
-        {% endfor %}
-    </table>
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="../static/css/studentGrades.css"/>
+        <link rel="icon" type="image/icon type" href="../static/docs/tree.png"/>
+        <title>Grades</title>
+    </head>
+    <body>
+
+        <!-- </div>
+        <button id = "openForm">Request Regrade</button>
+        <div class = "request_form" id = "request_form">
+            <div class = inner_form>
+                <form method="post">
+                    <h2>Remark Request</h2>
+                    <label for="question">Question (if applicable):</label>
+                    <input type="number" id = "question" name = "question">
+                    <label for="request">Reason for request:</label>
+                    <input type="text" id = "request" name = "request" requiers>
+                    <button id = ""></button>
+                </form>
+                <button id = "closeForm">&times;</button>
+            </div>
+         </div> -->
+
+        <div class ="overlay">
+            <div class ="modal">
+                <button class = "close-modal-btn">x</button>
+                <h2>Remark Request</h2>
+                <form action = "{{url_for('studentGrades')}}"method="POST">
+                    <label for="question">Question (if applicable):</label>
+                    <input type="number" id = "question" name = "question">
+                    <label for="request">Reason for request:</label>
+                    <input type="text" id = "request" name = "request" required>
+                    <button class = "submit_btn">Submit</button>
+                </form>
+
+            </div>
+        </div>
+
+        <div class = "website_content">
+
+            <div class="header">
+                <header>
+                    <h6><a href="./index.html">Home</a></h6>
+                    <h6><a href="./calendar.html">Calendar</a></h6>
+                    <h6><a href="./content.html">Content</a></h6>
+                    <h6 class="current_page"><a href="./assignments.html">Assignments</a></h6>
+                    <h6><a href="./labs.html">Labs</a></h6>
+                    <h6><a href="./team.html">Course Team</a></h6>
+                    <h6><a href="./feedback.html">Feedback</a></h6>
+                </header>
+            </div>
+    
+            {% block content %}
+            <div class = "grades_table">
+                <table>
+                    <tr>
+                        <th>Course Work</th>
+                        <th>Grade</th>
+                        <th></th>
+                    </tr>
+                    {% for Grade in student_grades %}
+                    <tr>
+                        
+                        <td>{{ Grade.work }}</td>
+                        <td>{{ Grade.grade }}</td>
+                        <td>
+                            <button class = "show-modal-btn">Request Remark</button>
+                        </td>        
+                    </tr>
+                    {% endfor %}
+            </table>
+
+        </div>
+
     {% endblock %}
-</body>
-</html>
+    <script src = "script.js"></script>
+    </body>
+    </html>
+    
