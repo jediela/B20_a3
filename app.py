@@ -133,6 +133,17 @@ def instructorHome():
     uname = User.query.filter_by(id=session['user_id']).first().uname
     return render_template('instructorHome.html', uname=uname)
 
+@app.route('/instructorGrades.html')
+def viewGrades():
+    all_grades = Grade.query.order_by(Grade.id).all()
+    return render_template("instructorGrades.html", grades=all_grades)
+
+@app.route('/instructorFeedback.html')
+def viewFeedback():
+    instructor_id = session['user_id']
+    instructorFeedback = db.session.query(Feedback, User.uname).join(User, Feedback.uid_student == User.id).filter(Feedback.uid_instructor == instructor_id).all()
+    return render_template("instructorFeedback.html", feedback=instructorFeedback)
+
 @app.route('/studentHome')
 def studentHome():
     if 'user_id' not in session or session['user_type'] != 'student':
@@ -168,6 +179,7 @@ def home():
         return redirect(url_for('studentHome'))
     else:
         return render_template("index.html")
+    
 @app.route('/assignments.html')
 def assignments(): 
     return render_template("assignments.html")

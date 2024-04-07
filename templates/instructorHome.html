@@ -23,39 +23,48 @@
             </form>
         </header>
     </div>
+
     <div class="page-border">
-    </div>
-    <h1 class="title">Welcome, Instructor {{ uname }}!</h1>
-    <div class="courseInfo">
-        <p>This is the instructor home page.</p>
-    </div>
-        <h1 class="title">CSCB20 — Introduction to Databases and Web Applications</h1>
-        <div class="courseInfo">
-            <h2 class="subhead">Course Description</h2>
-            <p>A practical introduction to databases and Web app development. Databases: terminology and applications; creating, querying and updating databases; the entity-relationship model for database design. Web documents and applications: static and interactive documents; Web servers and dynamic server-generated content; Web application development and interface with databases.</p>
-            <h2 class="subhead">Important Links!</h2>
-            <ul>
-                <li class="links"><a href="../static/docs/syllabus.pdf" target="_blank">Syllabus</a></li>
-                <li class="links"><a href="https://piazza.com/utoronto.ca" target="_blank">Piazza</a></li>
-            </ul>
+
+        <div>
+            <h1 class="title">Welcome, Instructor {{ uname }}!</h1>
+            <a href="instructorGrades.html">View grades</a>
+            <a href="instructorFeedback.html">View Feedback</a>
+            <a href="">View Remark Requests</a>
+            <a href="">Enter Grades</a>
         </div>
-        <div class="course-table">
-            <table class="instructor">
-                <tr>
-                    <th>Instructor</th>
-                    <th>Email</th>
-                    <th>Lectures</th>
-                    <th>Office Hours</th>
-                </tr>
-                <tr>
-                    <td>Dr. Anna Bretscher <br> <img class="prof_img" src="../static/docs/anna.jpg" alt="Anna B."></td>
-                    <td><a href="mailto: bretscher@utsc.utoronto.ca">bretscher@utsc.utoronto.ca</a></td>
-                    <td>M 9:15-11:00 @HW 216</td>
-                    <td>W 11:00-12:00 @IC 493</td>
-                </tr>
-            </table>
-       
+
+        <div class="courseInfo">
+            <h1 class="title">CSCB20 — Introduction to Databases and Web Applications</h1>
+            <div class="courseInfo">
+                <h2 class="subhead">Course Description</h2>
+                <p>A practical introduction to databases and Web app development. Databases: terminology and applications; creating, querying and updating databases; the entity-relationship model for database design. Web documents and applications: static and interactive documents; Web servers and dynamic server-generated content; Web application development and interface with databases.</p>
+                <h2 class="subhead">Important Links!</h2>
+                <ul>
+                    <li class="links"><a href="../static/docs/syllabus.pdf" target="_blank">Syllabus</a></li>
+                    <li class="links"><a href="https://piazza.com/utoronto.ca" target="_blank">Piazza</a></li>
+                </ul>
+            </div>
+            <div class="course-table">
+                <table class="instructor">
+                    <tr>
+                        <th>Instructor</th>
+                        <th>Email</th>
+                        <th>Lectures</th>
+                        <th>Office Hours</th>
+                    </tr>
+                    <tr>
+                        <td>Dr. Anna Bretscher <br> <img class="prof_img" src="../static/docs/anna.jpg" alt="Anna B."></td>
+                        <td><a href="mailto: bretscher@utsc.utoronto.ca">bretscher@utsc.utoronto.ca</a></td>
+                        <td>M 9:15-11:00 @HW 216</td>
+                        <td>W 11:00-12:00 @IC 493</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
     </div>
+    
+    
     <footer>
         <img class="uoftlogo" src="../static/docs/uoftcao.png" alt="UofT Logo">
         <p class="footerText"><a href="https://web.cs.toronto.edu/people/faculty-directory" target="_blank">University of Toronto Computer Science</a></p>
