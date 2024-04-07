@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../static/css/instructor.css">
+    <link rel="icon" type="image/icon type" href="../static/docs/tree.png"/>
+    <title>CSCB20 A3 - Enter Grades</title>
+</head>
+<body>
+    <div class="header">
+        <header>
+            <h6><a href="./index.html">Home</a></h6>
+            <h6><a href="./calendar.html">Calendar</a></h6>
+            <h6><a href="./content.html">Content</a></h6>
+            <h6><a href="./assignments.html">Assignments</a></h6>
+            <h6><a href="./labs.html">Labs</a></h6>
+            <h6><a href="./team.html">Course Team</a></h6>
+            <h6><a href="./feedback.html">Feedback</a></h6>
+            <!-- Logout button -->
+            <form action="/logout" method="POST">
+                <button type="submit">Logout</button>
+            </form>
+        </header>
+    </div>
+
+    <div class="page-border">
+        <h1 class="heading">Enter Student Grades</h1>
+
+        <div class="gradesForm">
+            <form action="{{ url_for('enterGrades') }}" method="post">
+                <label for="student_id">Student ID:</label>
+                <input type="text" id="student_id" name="student_id" required><br><br>
+        
+                <label for="work">Work:</label>
+                <input type="text" id="work" name="work" required><br><br>
+        
+                <label for="grade">Grade:</label>
+                <input type="number" id="grade" name="grade" required><br><br>
+        
+                <input class="enterGrade" type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -144,6 +144,29 @@ def viewFeedback():
     instructorFeedback = db.session.query(Feedback, User.uname).join(User, Feedback.uid_student == User.id).filter(Feedback.uid_instructor == instructor_id).all()
     return render_template("instructorFeedback.html", feedback=instructorFeedback)
 
+@app.route('/enterGrades.html', methods=['GET', 'POST'])
+def enterGrades():
+    if request.method == 'POST':
+        student_id = request.form['student_id']
+        work = request.form['work']
+        grade = request.form['grade']
+
+        # Assuming Grade is the model for the 'grades' table
+        new_grade = Grade(id=student_id, work=work, grade=grade)
+        db.session.add(new_grade)
+        db.session.commit()
+
+        flash('Grade entered successfully!', 'success')
+        return redirect(url_for('enterGrades'))
+    else:
+        return render_template("enterGrades.html")
+    
+@app.route('/instructorRemarks.html')
+def viewRemarks():
+    remarks = db.session.query(Remark, User.uname).join(User, Remark.id == User.id).all()
+    return render_template("instructorRemarks.html", remarks=remarks)
+
+
 @app.route('/studentHome')
 def studentHome():
     if 'user_id' not in session or session['user_type'] != 'student':
