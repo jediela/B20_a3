@@ -192,11 +192,7 @@ def studentGrades():
     if request.method == 'POST':
         rmk_question = request.form['question']
         rmk_request = request.form['request']
-
-
-
-        work_type = Grade.query.filter_by(id=session['user_id']).first().work
-        
+        work_type = request.form['work']        
         make_request = Remark(id = session['user_id'], work = work_type, question = rmk_question, request = rmk_request)
         db.session.add(make_request)
         db.session.commit()
