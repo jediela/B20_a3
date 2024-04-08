@@ -22,6 +22,8 @@ app.app_context().push()
 class User(db.Model):
     __tablename__ = 'user'
     id = db.Column(db.Integer, primary_key=True,autoincrement = True)
+    fname = db.Column(db.String(20), unique=True, nullable=False)
+    lname = db.Column(db.String(120), unique=True, nullable=False)
     uname = db.Column(db.String(20), unique=True, nullable=False)
     uemail = db.Column(db.String(120), unique=True, nullable=False)
     upwd = db.Column(db.String(128), nullable=False)  # Increased password length
@@ -48,7 +50,11 @@ class Feedback(db.Model):
     fid = db.Column(db.Integer, primary_key=True, autoincrement=True)
     uid_student = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
     uid_instructor = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
-    feedback = db.Column(db.Text, nullable=False)
+    lec_like = db.Column(db.String(1000), nullable = False)
+    lec_improve = db.Column(db.String(1000), nullable = False)
+    lab_like = db.Column(db.String(1000), nullable = False)
+    lab_improve= db.Column(db.String(1000), nullable = False)
+    comment = db.Column(db.String(1000))
 
 @app.route('/')
 @app.route('/homepage')
@@ -80,6 +86,7 @@ def login():
 
         session['user_id'] = user.id
         session['user_type'] = user.utype
+        
         # flash('Login successful!')
         user_type = session.get('user_type')
         if user_type == 'instructor':
@@ -94,6 +101,8 @@ def login():
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     if request.method == 'POST':
+        fname = request.form.get('fname')
+        lname = request.form.get('lname')
         username = request.form.get('username')
         email = request.form.get('email')
 
@@ -111,7 +120,7 @@ def register():
         user_type = request.form.get('user_type')
         hashed_password = generate_password_hash(password).decode('utf-8')
         
-        new_user = User(uname=username, uemail=email, upwd=hashed_password, utype=user_type)
+        new_user = User(uname=username, uemail=email, fname = fname, lname = lname, upwd=hashed_password, utype=user_type)
         db.session.add(new_user)
         db.session.commit()
         flash("Successfully registered!", 'success')
@@ -184,12 +193,15 @@ def studentGrades():
         rmk_question = request.form['question']
         rmk_request = request.form['request']
 
+
+
         work_type = Grade.query.filter_by(id=session['user_id']).first().work
         
         make_request = Remark(id = session['user_id'], work = work_type, question = rmk_question, request = rmk_request)
         db.session.add(make_request)
         db.session.commit()
         flash("Submitted successfully! You'll hear back from your professor soon!", 'success')
+        return redirect(url_for('studentGrades'))
     return render_template("studentGrades.html", student_grades = student_grades)
 
     
@@ -215,9 +227,27 @@ def calendar():
 def content():
     return render_template("content.html")
 
-@app.route('/feedback.html')
+@app.route('/feedback.html', methods = ['GET', 'POST'])
 def feedback():
-    return render_template("feedback.html")
+    instructors = User.query.filter_by(utype = "instructor").all()
+    if request.method == 'POST':
+        selected_instructor_id = request.form['selected_instructor']
+        lec_like = request.form['lec_like']
+        lec_improve = request.form['lec_improve']
+        lab_like = request.form['lab_like']
+        lab_improve= request.form['lab_improve']
+        comment = request.form['comment']
+
+        selected_instructor = User.query.get(selected_instructor_id)
+
+        give_feedback = Feedback(uid_student = session['user_id'], uid_instructor = selected_instructor.id,
+                                 lec_like = lec_like, lec_improve = lec_improve,
+                                 lab_like = lab_like, lab_improve = lab_improve, comment = comment)
+        db.session.add(give_feedback)
+        db.session.commit()
+        return redirect(url_for('feedback'))
+    return render_template('feedback.html', instructors = instructors)
+
 
 @app.route('/labs.html')
 def labs():

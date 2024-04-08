@@ -8,6 +8,7 @@
     <title>CSCB20 A2 - Feedback</title>
 </head>
 <body>
+    {% block content %}
     <div class="header">
         <header>
             <h6><a href="./index.html">Home</a></h6>
@@ -24,20 +25,54 @@
         <p>Here you can give us feedback about the assignments, lecutres or anything course related. Note that you can also post your questions on the
             <a href="https://piazza.com/utoronto.ca" target="_blank"> class forum (piazza)</a>
         </p>
-
-        <div class="formGroup">
-            <div class="feedbackInput">
-                <label for="feedback">Course Feedback:</label><br>
-                <textarea class="input-large" name="feedback" id="feedback" cols="100" rows="24" placeholder="Your feedback goes here..."></textarea><br>
-                <button class="submit" type="submit">Submit</button>
+        <form method = "POST">
+            <div class="form-group">
+                <label for="selected_instructor">What instructor do you want to give feedback to?:</label><br>
+                <select class="form-control" id="newInstructor" name="selected_instructor" required>
+                    {% for User in instructors %}
+                    <option value="{{User.id}}">{{User.fname}} {{User.lname}}</option>
+                    {% endfor %}
+                </select>
             </div>
-        </div>
-    </div>
+            <div class="formGroup">
+                <div class="feedbackInput">
+                    <label for="lec_like">What did you like about the lectures?:</label><br>
+                    <textarea class="feedback" name="lec_like" id="lec_like" cols="100" rows="10"></textarea><br>
+                </div>
+            </div>
+            <div class="formGroup">
+                <div class="feedbackInput">
+                    <label for="lec_improve">What could be improved about the lectures?:</label><br>
+                    <textarea class="feedback" name="lec_improve" id="lec_improve" cols="100" rows="10"></textarea><br>
+                </div>
+            </div>
+            <div class="formGroup">
+                <div class="feedbackInput">
+                    <label for="lab_like">What did you like about the labs?:</label><br>
+                    <textarea class="feedback" name="lab_like" id="lab_like" cols="100" rows="10"></textarea><br>
+                </div>
+            </div>
+            <div class="formGroup">
+                <div class="feedbackInput">
+                    <label for="lab_improve">What could be improved about the labs?:</label><br>
+                    <textarea class="feedback" name="lab_improve" id="lab_improve" cols="100" rows="10"></textarea><br>
+                </div>
+            </div>
+            <div class="formGroup">
+                <div class="feedbackInput">
+                    <label for="comment">Any additional comments:</label><br>
+                    <textarea class="feedback" name="comment" id="comment" cols="100" rows="10"></textarea><br>
+                </div>
+            </div>
+            <button class="submit" type="submit">Submit</button>
+
+        </form>
 
     <footer>
         <img class="uoftlogo" src="../static/docs/uoftcao.png" alt="UofT Logo">
         <p><a href="https://web.cs.toronto.edu/people/faculty-directory" target="_blank">University of Toronto Computer Science</a></p>
         <p>Copyright 2024 by Jediel, Ji, Maris. All Rights Reserved</p>
     </footer>
+    {% endblock %}
 </body>
 </html>

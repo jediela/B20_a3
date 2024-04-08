@@ -18,8 +18,8 @@
                         <h2 class = formTitle>Remark Request for {{ Grade.work }}</h2>
                         <label for="question{{ loop.index }}">Question (if applicable):</label>
                         <input type="number" id = "question{{ loop.index }}" name = "question"><br><br>
-                        <label for="request{{ loop.index }}">Reason for request:</label>
-                        <input class = "request-reason" type="text" id = "request{{ loop.index }}" name = "request" requiers> <br><br>
+                        <label for="request{{ loop.index }}">Reason for request:</label><br>
+                        <textarea class = "request-reason" type="text" id = "request{{ loop.index }}" cols="30" rows="10" name = "request" required> </textarea> <br><br>
                         <button type = "submit" class = "submit_btn">Submit</button>
                     </form>
                 </div>  
