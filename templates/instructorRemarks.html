@@ -29,7 +29,6 @@
         <table>
             <thead>
                 <tr>
-                    <th>Remark ID</th>
                     <th>Student ID</th>
                     <th>Work</th>
                     <th>Question</th>
@@ -39,7 +38,6 @@
             <tbody>
                 {% for remark, student_name in remarks %}
                 <tr>
-                    <td>{{ remark.rid }}</td>
                     <td>{{ student_name }}</td>
                     <td>{{ remark.work }}</td>
                     <td>{{ remark.question }}</td>

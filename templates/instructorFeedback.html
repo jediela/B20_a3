@@ -30,14 +30,23 @@
             <thead>
                 <tr>
                     <th>Student</th>
-                    <th>Feedback</th>
+                    <th>Lecture Likes</th>
+                    <th>Lecture Feedback</th>
+                    <th>Lab Likes</th>
+                    <th>Lab Feedback</th>
+                    <th>Additional Comments</th>
+
                 </tr>
             </thead>
             <tbody>
                 {% for feedback_item, student_name in feedback %}
                 <tr>
                     <td>{{ student_name }}</td>
-                    <td>{{ feedback_item.feedback }}</td>
+                    <td>{{ feedback_item.lec_like }}</td>
+                    <td>{{ feedback_item.lec_improve }}</td>
+                    <td>{{ feedback_item.lab_like }}</td>
+                    <td>{{ feedback_item.lab_improve }}</td>
+                    <td>{{ feedback_item.comment}}</td>
                 </tr>
                 {% endfor %}
             </tbody>
