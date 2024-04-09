@@ -184,7 +184,7 @@ def studentHome():
     uname = User.query.filter_by(id=session['user_id']).first().uname
     return render_template('studentHome.html', uname=uname)
 
-
+ 
 @app.route('/studentGrades.html', methods = ['GET', 'POST'])
 def studentGrades():
     student_grades = Grade.query.filter_by(id=session['user_id']).all()
@@ -225,23 +225,28 @@ def content():
 
 @app.route('/feedback.html', methods = ['GET', 'POST'])
 def feedback():
-    instructors = User.query.filter_by(utype = "instructor").all()
-    if request.method == 'POST':
-        selected_instructor_id = request.form['selected_instructor']
-        lec_like = request.form['lec_like']
-        lec_improve = request.form['lec_improve']
-        lab_like = request.form['lab_like']
-        lab_improve= request.form['lab_improve']
-        comment = request.form['comment']
+    user = User.query.filter_by(uname=username).first()
 
-        selected_instructor = User.query.get(selected_instructor_id)
+    if user.utype == 'student':
+        instructors = User.query.filter_by(utype = "instructor").all()
+        if request.method == 'POST':
+            selected_instructor_id = request.form['selected_instructor']
+            lec_like = request.form['lec_like']
+            lec_improve = request.form['lec_improve']
+            lab_like = request.form['lab_like']
+            lab_improve= request.form['lab_improve']
+            comment = request.form['comment']
 
-        give_feedback = Feedback(uid_student = session['user_id'], uid_instructor = selected_instructor.id,
-                                 lec_like = lec_like, lec_improve = lec_improve,
-                                 lab_like = lab_like, lab_improve = lab_improve, comment = comment)
-        db.session.add(give_feedback)
-        db.session.commit()
-        return redirect(url_for('feedback'))
+            selected_instructor = User.query.get(selected_instructor_id)
+
+            give_feedback = Feedback(uid_student = session['user_id'], uid_instructor = selected_instructor.id,
+                                    lec_like = lec_like, lec_improve = lec_improve,
+                                    lab_like = lab_like, lab_improve = lab_improve, comment = comment)
+            db.session.add(give_feedback)
+            db.session.commit()
+            return redirect(url_for('feedback'))
+        else:
+            return redirect(url_for('instructorFeedback'))
     return render_template('feedback.html', instructors = instructors)
 
 
@@ -252,7 +257,6 @@ def labs():
 @app.route('/team.html')
 def team():
     return render_template("team.html")
-
 
 if __name__ == '__main__':
     db.create_all()

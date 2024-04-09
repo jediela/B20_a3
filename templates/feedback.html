@@ -18,55 +18,62 @@
             <h6><a href="./labs.html">Labs</a></h6>
             <h6><a href="./team.html">Course Team</a></h6>
             <h6 class="current_page"><a href="./feedback.html">Feedback</a></h6>
+            <!-- Logout button -->
+            <form action="/logout" method="POST">
+                <button type="submit">Logout</button>
+            </form>
         </header>
     </div>
     <div class="page-border">
         <h1 class="title">CSCB20 — Feedback Page</h1>
-        <p>Here you can give us feedback about the assignments, lecutres or anything course related. Note that you can also post your questions on the
+        <p>Here you can give us feedback about the assignments, lecutres or anything course related. All responses will be anonymous. Note that you can also post your questions on the
             <a href="https://piazza.com/utoronto.ca" target="_blank"> class forum (piazza)</a>
         </p>
         <form method = "POST">
-            <div class="form-group">
-                <label for="selected_instructor">What instructor do you want to give feedback to?:</label><br>
-                <select class="form-control" id="newInstructor" name="selected_instructor" required>
-                    {% for User in instructors %}
-                    <option value="{{User.id}}">{{User.fname}} {{User.lname}}</option>
-                    {% endfor %}
-                </select>
-            </div>
-            <div class="formGroup">
-                <div class="feedbackInput">
-                    <label for="lec_like">What did you like about the lectures?:</label><br>
-                    <textarea class="feedback" name="lec_like" id="lec_like" cols="100" rows="10"></textarea><br>
-                </div>
-            </div>
-            <div class="formGroup">
-                <div class="feedbackInput">
-                    <label for="lec_improve">What could be improved about the lectures?:</label><br>
-                    <textarea class="feedback" name="lec_improve" id="lec_improve" cols="100" rows="10"></textarea><br>
-                </div>
-            </div>
-            <div class="formGroup">
-                <div class="feedbackInput">
-                    <label for="lab_like">What did you like about the labs?:</label><br>
-                    <textarea class="feedback" name="lab_like" id="lab_like" cols="100" rows="10"></textarea><br>
-                </div>
-            </div>
-            <div class="formGroup">
-                <div class="feedbackInput">
-                    <label for="lab_improve">What could be improved about the labs?:</label><br>
-                    <textarea class="feedback" name="lab_improve" id="lab_improve" cols="100" rows="10"></textarea><br>
-                </div>
-            </div>
-            <div class="formGroup">
-                <div class="feedbackInput">
-                    <label for="comment">Any additional comments:</label><br>
-                    <textarea class="feedback" name="comment" id="comment" cols="100" rows="10"></textarea><br>
-                </div>
-            </div>
-            <button class="submit" type="submit">Submit</button>
+            <div class="feedbackForm">
 
-        </form>
+                <div class="formGroup">
+                    <label for="selected_instructor">What instructor do you want to give feedback to?:</label><br>
+                    <select class="form-control" id="newInstructor" name="selected_instructor" required>
+                        {% for User in instructors %}
+                        <option value="{{User.id}}">{{User.fname}} {{User.lname}}</option>
+                        {% endfor %}
+                    </select><br><br>
+                </div>
+                <div class="formGroup">
+                    <div class="feedbackInput">
+                        <label for="lec_like">What did you like about the lectures?:</label><br>
+                        <textarea class="feedback" name="lec_like" id="lec_like" cols="100" rows="10"></textarea></textarea><br><br>
+                    </div>
+                </div>
+                <div class="formGroup">
+                    <div class="feedbackInput">
+                        <label for="lec_improve">What could be improved about the lectures?:</label><br>
+                        <textarea class="feedback" name="lec_improve" id="lec_improve" cols="100" rows="10"></textarea><br><br>
+                    </div>
+                </div>
+                <div class="formGroup">
+                    <div class="feedbackInput">
+                        <label for="lab_like">What did you like about the labs?:</label><br>
+                        <textarea class="feedback" name="lab_like" id="lab_like" cols="100" rows="10"></textarea><br><br>
+                    </div>
+                </div>
+                <div class="formGroup">
+                    <div class="feedbackInput">
+                        <label for="lab_improve">What could be improved about the labs?:</label><br>
+                        <textarea class="feedback" name="lab_improve" id="lab_improve" cols="100" rows="10"></textarea><br><br>
+                    </div>
+                </div>
+                <div class="formGroup">
+                    <div class="feedbackInput">
+                        <label for="comment">Any additional comments:</label><br>
+                        <textarea class="feedback" name="comment" id="comment" cols="100" rows="10"></textarea><br><br>
+                    </div>
+                </div>
+                <button class="submit" type="submit">Submit</button>
+
+            </form>
+        </div>
 
     <footer>
         <img class="uoftlogo" src="../static/docs/uoftcao.png" alt="UofT Logo">
